@@ -6,8 +6,9 @@ import Card from "./Card";
 
 import Pagination from "./pagination";
 import { useParams } from "react-router";
+import { RotatingLines } from "react-loader-spinner";
 
-function Anime_list({ Head,content }) {
+function Anime_list({ Head, content, isLoading }) {
   return (
     <div className="anime_list">
       <Filters title={Head && Head} />
@@ -18,7 +19,18 @@ function Anime_list({ Head,content }) {
 
         {content && content}
       </div>
+      <div className="loader">
+        {isLoading && isLoading ? (
+          <RotatingLines
+            strokeColor="#ffa42e"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          />
+        ) : null}
         <Pagination />
+      </div>
     </div>
   );
 }

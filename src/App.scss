@@ -147,6 +147,16 @@ nav {
   .left {
     width: 100%;
     // background-color: blue;
+    // margin-top: 30px;
+    .loader {
+      height: max-content;
+      padding: 12px;
+      // background-color: red;
+      display: grid;
+      width: 100%;
+      place-items: center;
+      margin-bottom: 100px;
+    }
   }
   .right {
     width: 30%;

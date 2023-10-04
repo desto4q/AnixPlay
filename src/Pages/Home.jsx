@@ -10,11 +10,10 @@ import Card from '../components/Card'
 
 function Home() {
   let {id} = useParams()
-  let {data} = useQuery(["recent",id],  async()=>{
+  let {data,isLoading} = useQuery(["recent",id],  async()=>{
     return fetch_recent({id})
   })
    
-  console.log(data)
 
 
   let Cards = data?.results?.map(({image,title,id,episodeNumber})=>{
@@ -23,7 +22,7 @@ function Home() {
   return (
     <div className="home main_cont">
       <div className="left">
-        <Anime_list content={Cards}/>
+        <Anime_list content={Cards} isLoading={isLoading}/>
 
       </div>
       <div className="right">

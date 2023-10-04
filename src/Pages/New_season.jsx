@@ -8,19 +8,33 @@ import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 
 function New_season() {
-    const {id } = useParams()
-    const {data} = useQuery([id], async ()=> {
-      return await fetchTop({pageNum: id})
-    })
+  const { id } = useParams();
+  const { data, isLoading } = useQuery([id], async () => {
+    return await fetchTop({ pageNum: id });
+  });
 
-    let Cards = data?.results?.map(({image,title,id,episodeNumber})=>{
-      return (<Card key={id} title={title} img={image} episode={episodeNumber} id={id}/>)
-    })
+  let Cards = data?.results?.map(({ image, title, id, episodeNumber }) => {
+    return (
+      <Card
+        key={id}
+        title={title}
+        img={image}
+        episode={episodeNumber}
+        id={id}
+      />
+    );
+  });
 
   return (
     <div className="new_season main_cont">
       <div className="left">
-        <Anime_list Head={"New Season"}  content={Cards && Cards}/>
+        <Anime_list Head={"New Season"} isLoading={isLoading} content={Cards && Cards} />
+        {/* {
+          isLoading ? <RotatingLines/>: null
+        } */}
+        <div className="loader">
+        
+        </div>  
       </div>
       <div className="right">
         <New_list title={"head"} content={dummy_content} />
