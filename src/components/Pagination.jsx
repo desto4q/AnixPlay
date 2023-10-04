@@ -6,31 +6,44 @@ import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useId } from "react";
 import { Link } from "react-router-dom";
 
-function Pagination() {
+function Pagination({ query }) {
   let location = useLocation().pathname;
   let { id } = useParams();
   let navigate = useNavigate();
-  let page =  location.slice(0, location.lastIndexOf('/'))
+  let page = location.slice(0, location.lastIndexOf("/"));
   let NextPage = (number) => {
-    let currPage = parseInt(number);
-    currPage += 1;
-    navigate(`${page}/${currPage}`)
+    if (query) {
+      let currPage = parseInt(number);
+      currPage += 1;
+      navigate(`${page}/${currPage}?q=${query}`);
+    } else {
+      let currPage = parseInt(number);
+      currPage += 1;
+      navigate(`${page}/${currPage}`);
+    }
   };
   let PrevPage = (number) => {
     let currPage = parseInt(number);
-    if (currPage >= 2) {
+    if (query) {
+      if (currPage >= 2) {
         currPage -= 1;
+      }
+      navigate(`${page}/${currPage}?q=${query}`);
     }
-    navigate(`${page}/${currPage}`)
 
+    else {
+      if (currPage >= 2) {
+        currPage -= 1;
+      }
+      navigate(`${page}/${currPage}`);
+    }
   };
 
   return (
     <div className="pagination">
       <button
         onClick={(e) => {
-          PrevPage(id)
-          
+          PrevPage(id);
         }}
       >
         <IconMinus />
@@ -38,11 +51,11 @@ function Pagination() {
       <div className="number">{parseInt(id)}</div>
       <button
         onClick={() => {
-            NextPage(id);
+          NextPage(id);
         }}
       >
         <IconPlus />
-      </button >
+      </button>
     </div>
   );
 }

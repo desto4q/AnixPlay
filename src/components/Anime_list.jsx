@@ -8,7 +8,6 @@ import Pagination from "./pagination";
 import { useParams } from "react-router";
 
 function Anime_list({ Head,content }) {
- 
   return (
     <div className="anime_list">
       <Filters title={Head && Head} />
@@ -19,7 +18,7 @@ function Anime_list({ Head,content }) {
 
         {content && content}
       </div>
-        <Pagination/>
+        <Pagination query={query && query}/>
     </div>
   );
 }
