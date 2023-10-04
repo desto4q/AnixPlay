@@ -14,12 +14,17 @@
     "@tanstack/react-query": "^4.35.7",
     "axios": "^1.5.1",
     "hamburger-react": "^2.5.0",
+    "plyr-react": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hls-player": "^3.0.7",
+    "react-html5video": "^2.5.1",
     "react-lines-ellipsis": "^0.15.3",
+    "react-player": "^2.13.0",
     "react-router": "^6.16.0",
     "react-router-dom": "^6.16.0",
     "sass": "^1.68.0",
+    "video.js": "^8.5.2",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {

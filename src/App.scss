@@ -83,7 +83,7 @@ nav {
       background-color: inherit;
       height: 32px;
       width: 272px;
-      padding: 2px
+      padding: 2px;
     }
     button {
       border: none;
@@ -127,14 +127,11 @@ nav {
   gap: 24px;
   a {
     font-size: 24px;
-    
   }
   a.active {
     color: $orange-peel;
   }
 }
-
-
 
 .app {
   display: flex;
@@ -158,9 +155,8 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    >* 
-    {
-      outline: 1px solid  grey;
+    > * {
+      outline: 1px solid grey;
     }
   }
 }
@@ -196,7 +192,6 @@ nav {
     }
   }
 
-
   .cards {
     display: flex;
     gap: 12px;
@@ -205,8 +200,6 @@ nav {
     justify-content: flex-start;
   }
 }
-
-
 
 .card {
   display: flex;
@@ -225,13 +218,12 @@ nav {
     width: 100%;
     left: 50%;
     top: 0;
-    transform:  translateX(-50%);
+    transform: translateX(-50%);
     object-fit: cover;
-
   }
   .text {
     z-index: 10;
-    background: linear-gradient(to bottom, rgba(0,0,0,.7), $night);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), $night);
     backdrop-filter: blur(2px);
     width: 100%;
     margin-top: auto;
@@ -241,7 +233,7 @@ nav {
     flex-direction: column;
     justify-content: space-evenly;
     .title {
-      color:  $tea-green;
+      color: $tea-green;
       text-transform: capitalize;
       font-size: 12px;
     }
@@ -265,16 +257,9 @@ nav {
   }
 }
 
-
-
-
-
 .card:hover {
   outline: 1px solid $orange-peel;
 }
-
-
-
 
 .list {
   width: 100%;
@@ -284,7 +269,7 @@ nav {
   gap: 8px;
   background-color: $night;
   padding-bottom: 12px;
-  .head{
+  .head {
     background-color: $orange-peel;
     color: $night;
     text-transform: capitalize;
@@ -311,7 +296,6 @@ nav {
   }
 }
 
-
 ///page routing buttons
 .pagination {
   display: flex;
@@ -327,10 +311,113 @@ nav {
     border: none;
     padding: 4px;
   }
-
 }
 
+.stream {
+  .left {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    video {
+      width: 100%;
+    }
+    .episode_list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
 
+      .button {
+        background: $yinmn-blue;
+        padding: 12px;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+      .cont {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .video {
+    display: flex;
+    flex-direction: column;
+    padding: 2px ;
+    
+    gap: 12px;
+    
+    .quality_list {
+      padding: 12px ;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      .quality {
+        background-color: $yinmn-blue;
+        padding: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        
+      }
+      .quality:active{
+        background-color: $tea-green;
+      }
+    }
+
+    .react-player {
+      position: relative;
+      // background-color: red;
+      // padding: 5px;
+    }
+    .react-player > video {
+      position: absolute;
+      object-fit: fill;
+      // left: 0;
+      // top: 0;
+    }
+  }
+}
+
+//video information
+.video_details {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 18px;
+  gap: 12px !important;
+  img {
+    width: 80%;
+    align-self: center;
+    outline: 1px solid $yinmn-blue;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    // padding:  0 12px;
+  }
+  .status_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: $tea-green;
+  }
+
+  .epi_count span,
+  .status span,
+  .year spantt {
+    color: $tea-green;
+  }
+
+  .status,
+  .year,
+  .epi_count {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
 
 @media screen and (max-width: 852px) {
   .cards {
@@ -348,7 +435,7 @@ nav {
       display: flex;
     }
   }
-  .home {
+  .main_cont {
     .right {
       display: none;
     }
@@ -364,6 +451,18 @@ nav {
         width: 100% !important;
       }
     }
-    
   }
 }
+
+// .player-wrapper {
+//   width: auto; // Reset width
+//   height: auto; // Reset height
+// }
+// .react-player {
+//   padding-top: 56.25%; // Percentage ratio for 16:9
+//   position: relative; // Set to relative
+// }
+
+// .react-player > div {
+//   position: absolute; // Scaling will occur since parent is relative now
+// }

@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { createContext } from "react";
 import { useContext } from "react";
 
-let PageContext = createContext();
+export let PageContext = createContext();
 
 export const ContextMaker = ({ child }) => {
 
-        let value = {}
+  let [Animname,setAnim] = useState()
+  let [url,setUrl] = useState("")
+        let value = {setAnim,Animname,url,setUrl}
 
   return <PageContext.Provider value={value}>{child}</PageContext.Provider>;
 };

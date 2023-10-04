@@ -21,3 +21,18 @@ export const fetcH_info = async ({id}) => {
         throw new Error(err.message);
     }
 };
+
+
+export const getStream = async ({id}) => {
+  let url = `https://api.consumet.org/anime/gogoanime/watch/${id && id}`
+  
+  try {
+      const { data } = await axios.get(url, { params: { server: "gogocdn" } });
+      return data;
+  } catch (err) {
+      throw new Error(err.message);
+  }
+};
+
+
+
