@@ -5,17 +5,23 @@ import { useRef } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useId } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { PageContext } from "../context/Context";
 
-function Pagination({ query }) {
+function Pagination() {
   let location = useLocation().pathname;
   let { id } = useParams();
   let navigate = useNavigate();
   let page = location.slice(0, location.lastIndexOf("/"));
+
+  const {sParam} = useContext(PageContext)
+  let query = sParam
+
   let NextPage = (number) => {
     if (query) {
       let currPage = parseInt(number);
       currPage += 1;
-      navigate(`${page}/${currPage}?q=${query}`);
+      navigate(`${page}/${currPage}?q=${query.replace(" ", "+")}`);
     } else {
       let currPage = parseInt(number);
       currPage += 1;

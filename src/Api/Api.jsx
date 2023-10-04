@@ -40,10 +40,29 @@ export const getStream = async ({id}) => {
 
 export const fetchSearch = async ({query, pageNum}) => {
   const url = `https://api.consumet.org/anime/gogoanime/${query}?page=${pageNum}`;
+  
     try {
-        const { data } = await axios.get(url, { params: { page: pageNum } });
+      
+        const { data } = await axios.get(url);
+        // console.log(data)
         return data;
     } catch (err) {
         throw new Error(err.message);
     }
 };
+
+
+export const fetchTop = async ({pageNum}) => {
+  const url = "https://api.consumet.org/anime/gogoanime/top-airing";
+
+    try {
+      
+        const { data } = await axios.get(url,{params: {page : pageNum}});
+        return data;
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+
+

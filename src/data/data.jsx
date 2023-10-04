@@ -6,11 +6,7 @@ export const Nav_links = [
     to: "/1",
   },
   {
-    text: "Anime list",
-    to: "/AnimeList/1",
-  },
-  {
-    text: "New release",
+    text: "Top Airing",
     to: "/NewSeason/1",
   },
   {

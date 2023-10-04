@@ -18,7 +18,7 @@ function Anime_list({ Head,content }) {
 
         {content && content}
       </div>
-        <Pagination query={query && query}/>
+        <Pagination />
     </div>
   );
 }

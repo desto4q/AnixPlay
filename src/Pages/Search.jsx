@@ -11,12 +11,13 @@ import Card from "../components/Card";
 // import {Anime_list} from "../components/Anime_list"
 function Search() {
 
-  const {sParam} = useContext(PageContext)
+  const {sParam,setSParam} = useContext(PageContext)
   const {id} = useParams()
   let [searchParams, setSearchParams] = useSearchParams();
   let query = searchParams.get("q")
   useEffect(()=>{
       if (query) {
+        setSParam(query)
       }
       else {
         if (sParam) {
