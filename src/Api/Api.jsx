@@ -66,3 +66,17 @@ export const fetchTop = async ({pageNum}) => {
 
 
 
+
+export const fetchTopSide = async () => {
+  const url = "https://api.consumet.org/anime/gogoanime/top-airing";
+    try {
+      
+        const { data } = await axios.get(url,{params: {page : 1}});
+        return data;
+    } catch (err) {
+        throw new Error(err.message);
+    }
+};
+
+
+

@@ -12,7 +12,6 @@ function Card({img,title,episode,id}) {
     }} className="card">
         <img src={img && img} alt="" />
         <div className="text">
-            {/* <p className='title'>{title && title}</p> */}
             <LinesEllipsis
             text={title&&title}
             maxLine={"2"}

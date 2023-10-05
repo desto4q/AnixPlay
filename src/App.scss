@@ -295,8 +295,10 @@ nav {
     gap: 8px;
     padding: 0 4px;
     .item {
+      border-bottom: 1px solid grey;
+      padding: 4px;
       h2 {
-        font-size: 16px;
+        font-size: 14px;
         color: $orange-peel;
       }
       p {
@@ -304,6 +306,14 @@ nav {
       }
     }
   }
+}
+.radio {
+  width: 100%;
+  max-width: 352px;
+  // >* {
+  //   height: 32px;
+  //   fill: red; 
+  // }
 }
 
 ///page routing buttons

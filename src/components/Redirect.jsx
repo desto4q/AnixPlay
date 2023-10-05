@@ -4,7 +4,6 @@ import { useNavigate} from 'react-router-dom'
 
 function Redirect() {
     let navigate = useNavigate()
-
         useEffect(()=>{
             navigate("/1")
         },[])

@@ -13,10 +13,6 @@ function Anime_list({ Head, content, isLoading }) {
     <div className="anime_list">
       <Filters title={Head && Head} />
       <div className="cards">
-        {/* {Arr.map((item, key) => {
-          return <Card key={key} />;
-        })} */}
-
         {content && content}
       </div>
       <div className="loader">

@@ -16,11 +16,9 @@ function Seach_box() {
     setSParam(e.target[0].value)
     if (location.includes("/Search")) {
       setSearchParams({ q: e.target[0].value });
-      
     }
     else {
       navigate("./Search/1");
-      
     }
    
   };

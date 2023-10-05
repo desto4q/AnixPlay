@@ -1,10 +1,7 @@
 import React from "react";
 import { IconMinus } from "@tabler/icons-react";
 import { IconPlus } from "@tabler/icons-react";
-import { useRef } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { useId } from "react";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { PageContext } from "../context/Context";
 
@@ -14,8 +11,8 @@ function Pagination() {
   let navigate = useNavigate();
   let page = location.slice(0, location.lastIndexOf("/"));
 
-  const {sParam} = useContext(PageContext)
-  let query = sParam
+  const { sParam } = useContext(PageContext);
+  let query = sParam;
 
   let NextPage = (number) => {
     if (query) {
@@ -28,6 +25,7 @@ function Pagination() {
       navigate(`${page}/${currPage}`);
     }
   };
+  
   let PrevPage = (number) => {
     let currPage = parseInt(number);
     if (query) {
@@ -35,9 +33,7 @@ function Pagination() {
         currPage -= 1;
       }
       navigate(`${page}/${currPage}?q=${query}`);
-    }
-
-    else {
+    } else {
       if (currPage >= 2) {
         currPage -= 1;
       }
