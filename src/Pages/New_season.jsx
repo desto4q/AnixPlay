@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchTop } from "../Api/Api";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
+import SideComp from "../components/SideComp";
 
 function New_season() {
   const { id } = useParams();
@@ -37,8 +38,7 @@ function New_season() {
         </div>  
       </div>
       <div className="right">
-        <New_list title={"head"} content={dummy_content} />
-        <New_list title={"head"} content={dummy_content} />
+      <SideComp/>
       </div>
     </div>
   );

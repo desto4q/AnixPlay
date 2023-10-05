@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useRef } from "react";
 import Video_player from "../components/Video_player";
+import { Radio } from "react-loader-spinner";
 
 
 
@@ -60,12 +61,12 @@ function Stream() {
     <div className="stream main_cont">
       <div className="left">
         <div className="video">
-          <Video_player src={vid_source && vid_source}/>
+          {streamloading ? <Radio wrapperClass='radio' colors={["#ffa42e","#ffa42e","#ffa42e"]} />:<Video_player src={vid_source && vid_source}/> }
 
           <div className="quality_list">
-            {Streamdata?.sources.map((item)=>{
+            {Streamdata?.sources.map((item,key)=>{
                 return (
-                  <div className="quality" key={item} onClick={e=>{
+                  <div className="quality" key={key} onClick={e=>{
                     setVideo(item)
                   }}>
                     {item?.quality}
@@ -97,6 +98,7 @@ function Stream() {
         </div>
       </div>
       <div className="right">
+        {streamloading ? <Radio wrapperClass='radio' colors={["#ffa42e","#ffa42e","#ffa42e"]} />: null}
         <Video_details
           img={data?.image}
           title={data?.title}

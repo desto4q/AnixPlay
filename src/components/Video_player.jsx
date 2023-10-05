@@ -12,7 +12,7 @@ function Video_player({ src }) {
 
   return (
     <div className="player-wrapper">
-      <ReactPlayer width={"100%"} pip className="react-player" url={source} controls />
+      <ReactPlayer width={"100%"}  height={"100%"} pip className="react-player" url={source} controls />
     </div>
   );
 }

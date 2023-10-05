@@ -10,7 +10,7 @@ function SideComp() {
   const {data, isLoading} = useQuery(["side"],async ()=>{
     return fetchTopSide()
   })
-  console.log(data)
+  // console.log(data)
 
   if (isLoading) {
     return <Radio wrapperClass='radio' colors={["#ffa42e","#ffa42e","#ffa42e"]} />
@@ -22,7 +22,7 @@ function SideComp() {
       <div className="content">
         {data?.results?.map(({id,title})=>{
           return(
-            <Side_list title={title} id={id}/>
+            <Side_list key={id} title={title} id={id}/>
           )
         })}
       </div>

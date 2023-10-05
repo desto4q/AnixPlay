@@ -32,7 +32,6 @@ function Home() {
       <div className="right">
         {/* <New_list content={dummy_content} title={"head"}/> */}
         <SideComp />
-        <New_list content={dummy_content} title={"head"}/>
       </div>
     </div>
   )
