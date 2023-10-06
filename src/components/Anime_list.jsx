@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Arr } from "../data/data";
 import Filters from "./Filters";
 import Card from "./Card";
-
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 import { useParams } from "react-router";
 import { RotatingLines } from "react-loader-spinner";
 
