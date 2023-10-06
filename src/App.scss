@@ -354,9 +354,19 @@ nav {
 
       .button {
         background: $yinmn-blue;
-        padding: 12px;
+        width: 40px;
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
         border-radius: 2px;
         cursor: pointer;
+        outline: 1px solid $yinmn-blue;
+      }
+      .button:hover {
+        outline: 1px solid $orange-peel;
+      }
+      a.active {
+        background-color: "red";
       }
       .cont {
         display: flex;
@@ -369,12 +379,9 @@ nav {
   .video {
     display: flex;
     flex-direction: column;
-    padding: 2px ;
-    
     gap: 12px;
-    
     .quality_list {
-      padding: 12px ;
+      padding: 12px  0;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
