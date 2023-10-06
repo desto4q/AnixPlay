@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchSearch } from "../Api/Api";
 import Card from "../components/Card";
+import SideComp from "../components/SideComp"
 // import {Anime_list} from "../components/Anime_list"
 function Search() {
 
@@ -47,7 +48,9 @@ function Search() {
         
         <Anime_list isLoading={isLoading} content={Cards && Cards} Head={"Search Results"}/>
       </div>
-      <div className="right"></div>
+      <div className="right">
+        <SideComp/>
+      </div>
     </div>
   );
 }
