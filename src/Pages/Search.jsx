@@ -28,7 +28,7 @@ function Search() {
 
   
   
-  const {data} = useQuery([id,query], async ()=> {
+  const {data,isLoading} = useQuery([id,query], async ()=> {
     return await fetchSearch({query:query,pageNum: id})
   })
 
@@ -44,7 +44,8 @@ function Search() {
   return (
     <div className="search main_cont">
       <div className="left">
-        <Anime_list  content={Cards && Cards} Head={"Search Results"}/>
+        
+        <Anime_list isLoading={isLoading} content={Cards && Cards} Head={"Search Results"}/>
       </div>
       <div className="right"></div>
     </div>
