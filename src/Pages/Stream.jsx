@@ -63,6 +63,7 @@ function Stream() {
 
   let List = [1, 2, 3, 4, 5, 6, 7, 8, 9, 6, 2]; // Define an array named 'List'
 
+  console.log(data);
   // Define a function 'onPaginate' to handle pagination
   const onPaginate = (pageNumber) => {
     console.log(pageNumber); // Log the selected page number to the console
@@ -101,6 +102,14 @@ function Stream() {
               );
             })}
           </div>
+        </div>
+        <div className="details_mobile">
+          <div className="details_title">
+            {data?.title}
+            <div className="details_year">{data?.releaseDate}</div>
+            <div className="details_type">{data?.subOrDub}</div>
+          </div>
+          <p>{data?.description}</p>
         </div>
         <div className="sources"></div>
         <div className="episode_list">
@@ -153,6 +162,7 @@ function Stream() {
           year={data?.releaseDate}
           status={data?.status}
           episodes={data?.totalEpisodes}
+          subOrDub={data?.subOrDub}
         />
       </div>
     </div>

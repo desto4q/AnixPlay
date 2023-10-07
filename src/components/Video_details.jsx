@@ -8,6 +8,7 @@ function Video_details({
   description,
   status,
   year,
+  subOrDub,
 }) {
   return (
     <div className="video_details">
@@ -19,18 +20,23 @@ function Video_details({
             {" "}
             Status: <span>{status && status}</span>
           </p>
-          <p className="year">
+          <p className="epi_count">
             Year: <span> {year && year}</span>{" "}
           </p>
           <p className="epi_count">
             {" "}
-            episodes: <span>{episodes && episodes}</span>
+            Episodes: <span>{episodes && episodes}</span>
+          </p>
+          <p className="epi_count">
+            {" "}
+            Type: <span>{subOrDub && subOrDub.toUpperCase()}</span>
           </p>
         </div>
         <p className="description">{description && description}</p>
       </div>
     </div>
   );
+
 }
 
 export default Video_details;

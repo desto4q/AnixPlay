@@ -14,7 +14,7 @@ function Card({ img, title, episode, id }) {
       }}
       className="card"
     >
-      <img src={img && img} alt="" />
+      <img loading="lazy" src={img && img} alt="" />
       <div className="text">
         <LinesEllipsis
           text={title && title}

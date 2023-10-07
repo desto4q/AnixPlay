@@ -21,7 +21,7 @@ function Home() {
     return (<Card key={id} title={title} img={image} episode={episodeNumber} id={id}/>)
   })
 
-
+  
   
   return (
     <div className="home main_cont">

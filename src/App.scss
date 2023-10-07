@@ -374,6 +374,35 @@ nav {
         flex-wrap: wrap;
       }
     }
+
+    .details_mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-top: 1px solid $moonstone;
+      padding: 12px 0;
+      display: none;
+      .details_title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .details_year {
+          color: $tea-green;
+        }
+        .details_type {
+          background-color: $moonstone;
+          padding: 4px;
+          border-radius: 2px;
+          color: white;
+          display: grid;
+          place-items: center;
+        }
+      }
+      p {
+        font-size: 12px;
+      }
+    }
   }
 
   .video {
@@ -389,7 +418,8 @@ nav {
         background-color: $yinmn-blue;
         padding: 8px;
         cursor: pointer;
-        font-size: 14px;
+        font-size: 12px;
+        border-radius: 4px;
         
       }
       .quality:active{
@@ -456,6 +486,9 @@ nav {
 @media screen and (max-width: 852px) {
   .cards {
     justify-content: center !important;
+  }
+  .details_mobile {
+    display: flex !important;
   }
   .card {
     width: 152px;
