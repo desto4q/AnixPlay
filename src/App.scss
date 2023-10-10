@@ -387,6 +387,7 @@ nav {
         display: flex;
         align-items: center;
         gap: 8px;
+        flex-wrap: wrap;
         .details_year {
           color: $tea-green;
         }
