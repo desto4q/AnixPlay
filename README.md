@@ -1,14 +1,17 @@
 # AnimixPlay
 
-Fast basic image viewer written in python
+Anime Streaming website
 
 ## Getting Started
 
-Either download the Release or copy the code
+``` bash
+    git clone https://github.com/desto4q/AnimixPlay.git
+```
 
 ### Prerequisites
 
-A Virtual Env for the code, or Plug n Play for the release
+- Node
+- Pnpm
 
 # Installing
 
@@ -16,20 +19,30 @@ Dowload and Unzip In Project folder<br>
 
 ### If using code
 
-
-create a Virtual enviroment
-```python
-pip install Virtualenv
+``` bash
+    git clone https://github.com/desto4q/AnimixPlay.git
 ```
 
-```python
-Virtualenv Venv .
-```
+#### Then
+
+``````
+    Pnpm install
+``````
+
+``` vite
+    Pnpm run dev
+``````
+
+## Screenshots
+
+![Myimage](./Images/Screenshot.png)
+
+![Myimage](./Images/Screenshot_2.png)
 
 
-![Myimage](https://github.com/desto4q/Image_viewer/blob/main/Images/Image.png?raw=true)
+contact me at
 
+    desto4q@gmail.com
 
-Else Run __Imageviewer.exe__
 
 ## [Portfolio](https://illumi-code.netlify.app/)
