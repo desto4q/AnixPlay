@@ -20,7 +20,7 @@ Dowload and Unzip In Project folder<br>
 ### If using code
 
 ``` bash
-    git clone https://github.com/desto4q/AnimixPlay.git
+    git clone https://github.com/desto4q/AnixPlay.git
 ```
 
 #### Then
