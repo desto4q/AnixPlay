@@ -1,65 +1,68 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useParams } from "react-router";
-import { fetcH_info, getStream } from "../Api/Api";
-import { Radio } from "react-loader-spinner";
+import { useQueries, useQuery } from "@tanstack/react-query";
+import { fetcH_info, getStream } from "../Api/Api"; 
+import { useParams } from "react-router-dom"; 
+import { useState } from "react"; 
+import Video_details from "../components/Video_details"; 
+import { Link } from "react-router-dom"; 
+import { useEffect } from "react"; 
+import Video_player from "../components/Video_player"; 
 import { SxPaginate } from "sx-paginate"; 
 import "sx-paginate/dist/index.css"; 
-import Video_details from "../components/Video_details";
-import Video_player from "../components/Video_player";
-import { Link } from "react-router-dom";
-
+import { Radio } from "react-loader-spinner";
+// Define a functional component called Stream
 function Stream() {
-  let [vid_source, setVideo] = useState();
 
-  let { id } = useParams();
-  let { data, isLoading: detail_loading } = useQuery([id], async () => {
-    let info_String = id.replace(/-episode-\d+/g, "");
-    return await fetcH_info({ id: info_String });
+  let [vid_source, setVideo] = useState(); // Declare a state variable for video source and a setter function
+
+  let { id } = useParams(); // Get the 'id' parameter from the URL using the useParams hook
+
+  let regex = /\d+$/; 
+  const matches = id.match(regex);
+  let { data } = useQuery([id], async () => {
+    if (id) {
+      let info_String = id.replace(/-episode-\d+/g, ""); 
+      return await fetcH_info({ id: info_String }); 
+    }
   });
 
-  let { data: streamdata, isLoading: streamloading } = useQuery(
+  
+  let { data: Streamdata, isLoading: streamloading } = useQuery(
     [id, data?.episodes],
     async () => {
+      // Check if the 'id' contains the word 'episode'
       let subString = "episode";
       const regex = new RegExp(subString, "i");
       if (regex.test(id)) {
-        if (data?.episodes) {
-          const regex = /\d+$/;
-          const matches = id.match(regex);
-          let numId = parseInt(matches[0]) - 1;
-          let epid = await data?.episodes[numId].id;
-          return await getStream({ id: epid });
-        }
+        const regex = /\d+$/;
+        const matches = id.match(regex); 
+        let numId = parseInt(matches[0]) - 1; 
+        let epid = await data?.episodes[numId].id; 
+        return await getStream({ id: epid });
       } else {
-        if (data?.episodes) {
-          let subString = `${id}-episode-1`;
-          let epid = await data?.episodes[0].id;
-          return await getStream({ id: epid });
-        }
+        let subString = `${id}-episode-1`;
+        let epid = await data?.episodes[0].id; 
+        return await getStream({ id: epid });
       }
-      return "fetching";
     }
   );
 
   useEffect(() => {
-    if (streamdata?.sources) {
-      console.log(streamdata.sources)
-      setVideo(streamdata?.sources[0]);
+    if (Streamdata?.sources) {
+      setVideo(Streamdata?.sources[0]); // Set the video source to the first source in the array
     }
-  }, [streamdata]);
+  }, [Streamdata]);
+
 
   const onPaginate = (pageNumber) => {
     console.log(pageNumber); // Log the selected page number to the console
   };
 
   const [paginatedPosts, setPaginatedPosts] = useState([]);
+
   return (
     <div className="stream main_cont">
       <div className="left">
-        <h2>{id}</h2>
         <div className="video">
           {streamloading ? ( // Conditional rendering based on the 'streamloading' variable
             <Radio
@@ -71,7 +74,7 @@ function Stream() {
           )}
 
           <div className="quality_list">
-            {streamdata?.sources?.map((item, key) => {
+            {Streamdata?.sources.map((item, key) => {
               // Map over the sources in Streamdata and render them
               return (
                 <div
@@ -95,6 +98,7 @@ function Stream() {
           </div>
           <p>{data?.description}</p>
         </div>
+        <div className="sources"></div>
         <div className="episode_list">
           <h3>Episodes</h3>
           <div className="cont">
@@ -132,7 +136,7 @@ function Stream() {
         </div>
       </div>
       <div className="right">
-        {detail_loading ? (
+        {streamloading ? (
           <Radio
             wrapperClass="radio"
             colors={["#ffa42e", "#ffa42e", "#ffa42e"]}
@@ -152,4 +156,4 @@ function Stream() {
   );
 }
 
-export default Stream;
+export default Stream; // Export the Stream component as the default export

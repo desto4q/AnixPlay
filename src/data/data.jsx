@@ -9,10 +9,10 @@ export const Nav_links = [
     text: "Top Airing",
     to: "/NewSeason/1",
   },
-  {
-    text: "Movie",
-    to: "/Movies/1",
-  },
+  // {
+  //   text: "Movie",
+  //   to: "/Movies/1",
+  // },
 
 ];
 

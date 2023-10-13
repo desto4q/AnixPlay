@@ -20,12 +20,14 @@ function Anime_list({ Head, content, isLoading }) {
             strokeColor="#ffa42e"
             strokeWidth="5"
             animationDuration="0.75"
-            width="96"
+            width="58"
+
             visible={true}
           />
         ) : null}
-        <Pagination />
+        
       </div>
+      <Pagination />
     </div>
   );
 }

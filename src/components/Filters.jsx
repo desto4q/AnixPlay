@@ -8,7 +8,7 @@ function Filters({title}) {
     <div className="header">
       <h3>{title?title:"Recent Release"}</h3>
       <div className="filter_list">
-        {filter_list.map((item) => {
+        {/* {filter_list.map((item) => {
           if (item.toLowerCase() == active_filter) {
             return (
               <div className="filter filter_active" key={item}>
@@ -27,7 +27,7 @@ function Filters({title}) {
               {item}
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

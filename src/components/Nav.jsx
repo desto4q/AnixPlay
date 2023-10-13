@@ -11,8 +11,11 @@ function Nav() {
 
   return (
     <nav>
-      <div className="logo">
-        AnimixPlay
+      <div className="logo ">
+        AmixPlay
+      </div>
+      <div className="logo mobile_logo">
+        AmP
       </div>
       <div className="links">
         {Nav_links.map(({ text, to }, key) => {
