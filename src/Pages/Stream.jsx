@@ -46,7 +46,7 @@ function Stream() {
 
   useEffect(() => {
     if (streamdata?.sources) {
-      console.log(streamdata.sources)
+      // console.log(streamdata.sources)
       setVideo(streamdata?.sources[0]);
     }
   }, [streamdata]);
@@ -71,8 +71,12 @@ function Stream() {
           )}
 
           <div className="quality_list">
+            Quality:
             {streamdata?.sources?.map((item, key) => {
               // Map over the sources in Streamdata and render them
+              if (item?.quality == "backup" || item?.quality == "default"){
+                return (null)
+              }
               return (
                 <div
                   className="quality"
@@ -105,10 +109,6 @@ function Stream() {
                   to={`/Stream/${id}`}
                   className="button"
                   key={id}
-                  onClick={async (e) => {
-                    setUrl(url); // Set the URL (setUrl is not defined in this code)
-                    // setVideo(getStream({url:url})) // Set the video source (commented out)
-                  }}
                 >
                   {number}
                 </Link>
