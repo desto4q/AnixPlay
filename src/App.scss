@@ -109,6 +109,15 @@ nav {
   .logo {
     z-index: 10;
   }
+  .desk{
+    display: flex;
+    // background-color: red;
+    gap: 2px;
+    // align-items: baseline;
+    img {
+      height: 38px;
+    }
+  }
 }
 
 .nav_drop_down {
@@ -507,8 +516,9 @@ nav {
 }
 
 @media screen and (max-width: 852px) {
-  .logo {
-    display: none;
+  .desk {
+    display: none !important;
+
   }
   .mobile_logo {
     display: flex;

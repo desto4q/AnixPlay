@@ -12,11 +12,16 @@ function Nav() {
 
   return (
     <nav>
-      <div className="logo ">
-        <Link to={"/"}>AmixPlay</Link>
+      <div className="logo desk">
+        <div className="icon">
+          <img src="./logo.png" alt="" />
+        </div>
+        <Link to={"/"}>mixPlay</Link>
       </div>
       <div className="logo mobile_logo">
-      <Link to={"/"}>AMP</Link>
+      <Link to={"/"}>
+        <img src="./logo.png" alt="" />
+      </Link>
       </div>
       <div className="links">
         {Nav_links.map(({ text, to }, key) => {
