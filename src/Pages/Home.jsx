@@ -30,11 +30,7 @@ function Home() {
     );
   });
 
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
+
 
   return (
     <div className="home main_cont">
