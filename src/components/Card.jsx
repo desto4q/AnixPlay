@@ -9,12 +9,12 @@ function Card({ img, title, episode, id }) {
   return (
     <Link
       to={`/Stream/${id}`}
-      // onClick={(e) => {
-      //   setAnim(id);
-      // }}
+        // onClick={(e) => {
+        //   setAnim(id);
+        // }}
       className="card"
     >
-      {/* <img loading="lazy" src={img && img} alt="" /> */}
+      <img loading="lazy" src={img && img} alt="" />
       <div className="text">
         <LinesEllipsis
           text={title && title}

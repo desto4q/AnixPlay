@@ -10,6 +10,7 @@ import "sx-paginate/dist/index.css";
 import Video_details from "../components/Video_details";
 import Video_player from "../components/Video_player";
 import { Link } from "react-router-dom";
+import SideComp from "../components/SideComp";
 
 function Stream() {
   let [vid_source, setVideo] = useState();
@@ -147,6 +148,7 @@ function Stream() {
           episodes={data?.totalEpisodes}
           subOrDub={data?.subOrDub}
         />
+        <SideComp />
       </div>
     </div>
   );

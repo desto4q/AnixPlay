@@ -5,6 +5,7 @@ import { Divide as Hamburger } from "hamburger-react";
 import { Nav_links } from "../data/data";
 import { useState } from "react";
 import Seach_box from "./Seach_box";
+import { Link } from "react-router-dom";
 function Nav() {
   const [ham_state,setHam] = useState(false)
 
@@ -12,10 +13,10 @@ function Nav() {
   return (
     <nav>
       <div className="logo ">
-        AmixPlay
+        <Link to={"/"}>AmixPlay</Link>
       </div>
       <div className="logo mobile_logo">
-        AmP
+      <Link to={"/"}>AMP</Link>
       </div>
       <div className="links">
         {Nav_links.map(({ text, to }, key) => {
